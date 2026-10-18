@@ -20,3 +20,17 @@ add chain=input connection-state=established,related comment="Izinkan koneksi ya
 add chain=input protocol=icmp comment="Izinkan paket ICMP untuk uji koneksi"
 add chain=input action=drop comment="Blokir seluruh ancaman akses tidak sah"
 
+---
+
+## 2. Instalasi & Konfigurasi Layanan Debian Server
+Panduan singkat instalasi paket layanan dasar pada sistem operasi Debian Linux:
+
+### A. Instalasi & Konfigurasi Web Server (Apache)
+```bash
+# Perbarui repositori dan instal paket Apache2
+sudo apt update && sudo apt upgrade -y
+sudo apt install apache2 -y
+
+# Aktifkan layanan agar berjalan otomatis saat sistem booting
+sudo systemctl start apache2
+sudo systemctl enable apache2
